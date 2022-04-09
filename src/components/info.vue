@@ -10,6 +10,13 @@
     <li>Python</li>
   </ul>
 
+<!-- usando @click para mostrar o E-mail -->
+  <div>
+    <button @click="showEmail">
+    {{ textoBotao }}
+    </button>
+  </div>
+
   <!-- v-show -->
   <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
 
@@ -18,7 +25,7 @@
       basta clicar aqui!
     </a>
   </p>
-  <picture />
+  <Picture />
 
 </template>
 <script>
@@ -33,8 +40,22 @@ export default {
     return { 
       esta_trabalhando: false,
       mostrar_email: false,
-      url_portfolio: "https://github.com/titiushadow"
+      email: 'mesaque1212@gmail.com',
+      meu_link: "https://github.com/titiushadow",
+      textoBotao: 'Mostrar e-mail'
     }
-  }
+  },
+
+  // Metodo para mostrar e esconder E-mail
+  methods: {
+    showEmail(){
+      this.mostrar_email = !this.mostrar_email
+      if(!this.mostrar_email) {
+        this.textoBotao = 'mostrar e-mail'
+      } else {
+          this.textoBotao = 'Esconder e-mail'
+      }
+    }
+  },
 }
 </script>
