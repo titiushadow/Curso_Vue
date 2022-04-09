@@ -20,7 +20,8 @@
   <!-- v-show -->
   <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
 
-  <p>Para acessar meu portifólio
+<!-- link para o portifólio -->
+  <p class="teste">Para acessar meu portifólio
     <a v-bind:href="meu_link">
       basta clicar aqui!
     </a>
@@ -59,3 +60,10 @@ export default {
   },
 }
 </script>
+
+<style>
+  .paragrafo-pai {
+    color:red;
+  }
+
+</style>
