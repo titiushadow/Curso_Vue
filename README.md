@@ -1,11 +1,5 @@
 # projeto_vue
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
+Esse projeto contém os comandos basicos do vue, como: v-if, v-else, v-show,
+v-for, props, $emit, lifecycle hooks, css scoped e css global, eventos @submit e @click
+entre outros. 
