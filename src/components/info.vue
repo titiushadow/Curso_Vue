@@ -5,15 +5,15 @@
 
 <!-- Lista usando (v-for) -->
   <p>Utilizo as seguintes tecnologias para back-end:</p>
-  <ul>
-    <li v-for="(technology,index) in backend_technologies" v-bind:key="index">{{ technology }}</li>
-  </ul>
+    <ul>
+      <li v-for="(technology,index) in backend_technologies" v-bind:key="index">{{ technology }}</li>
+    </ul>
+
   <p>Utilizo as seguintes tecnologias para fronend:</p>
     <ul>
       <li v-for="technology in frontend_technologies" :key="technology.id">
         {{ technology.language }}
-      </li>
-      
+      </li>     
     </ul>
 
 <!-- usando @click para mostrar o E-mail -->
@@ -36,17 +36,21 @@
 </template>
 <script>
 
+import { booleanLiteral } from '@babel/types'
 import Picture from './Picture'
 export default {
   name: 'Info',
   components: {
     Picture
   },
+  //Tipando a variavel
+  props: {
+    email: String,
+    esta_trabalhando: Boolean
+  },
   data() {
     return { 
-      esta_trabalhando: false,
       mostrar_email: false,
-      email: 'mesaque1212@gmail.com',
       meu_link: "https://github.com/titiushadow",
       textoBotao: 'Mostrar e-mail',
 
