@@ -4,15 +4,18 @@
         <p>Meu nome é: {{ nome }}, E meu trabalho é: {{ Profissão }}</p>
     </div>
     <MultiplosEventos />
+    <Reutilizacao />
 </template>
 
 <script>
 
+import Reutilizacao from './Reutilizacao.vue'
 import MultiplosEventos from './MultiplosEventos.vue'
 export default {
     name: 'PrimeiroComponente',
     components: {
-        MultiplosEventos       
+        MultiplosEventos, 
+        Reutilizacao      
     },
     data() {
         return {
