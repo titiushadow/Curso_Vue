@@ -2,13 +2,19 @@
 <!-- v-if and v-else -->
   <p v-if="esta_codando">Estou codando no momento.</p>
   <p v-else>Estou em busca de novas oportunidades</p>
-  <p>Utilizo as seguintes tecnologias:</p>
+
+<!-- Lista usando (v-for) -->
+  <p>Utilizo as seguintes tecnologias para back-end:</p>
   <ul>
-    <li>PHP/Laravel</li>
-    <li>JavaScript</li>
-    <li>PHP</li>
-    <li>Python</li>
+    <li v-for="(technology,index) in backend_technologies" v-bind:key="index">{{ technology }}</li>
   </ul>
+  <p>Utilizo as seguintes tecnologias para fronend:</p>
+    <ul>
+      <li v-for="technology in frontend_technologies" :key="technology.id">
+        {{ technology.language }}
+      </li>
+      
+    </ul>
 
 <!-- usando @click para mostrar o E-mail -->
   <div>
@@ -27,7 +33,6 @@
     </a>
   </p>
   <Picture />
-
 </template>
 <script>
 
@@ -43,7 +48,17 @@ export default {
       mostrar_email: false,
       email: 'mesaque1212@gmail.com',
       meu_link: "https://github.com/titiushadow",
-      textoBotao: 'Mostrar e-mail'
+      textoBotao: 'Mostrar e-mail',
+
+      //Array para renderização de listas (v-for)
+      backend_technologies: ['PHP/Laravel', 'JavaScript', 'PHP', 'Python'],
+
+      // Array de objetos com (v-for)
+      frontend_technologies: [
+        {id: 1, language: 'HTML'},
+        {id: 2, language: 'CSS'},
+        {id: 3, language: 'Vue'}       
+      ]
     }
   },
 
