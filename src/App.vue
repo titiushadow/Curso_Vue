@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Header />
+  <Header :esta_logado="true" />
   <primeiro-componente/>
   <p class="paragrafo-pai">A linguagem que eu uso é: {{ Testando }}</p>
   <life-cycle />
