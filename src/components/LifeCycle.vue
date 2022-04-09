@@ -13,12 +13,23 @@ export default {
     created(){
         setTimeout(() => {
             this.nome = 'Meseikers'
-        }, 1000);  
+        }, 1000); 
+        
+        this.lifeCycle()
     },
     mounted() {
         setTimeout(() => {
             this.nome = 'João'
         }, 2000);
+
+        this.lifeCycle()
     },
+    
+    // metodo lifeCycle
+    methods: {
+        lifeCycle() {
+            console.log('successfully executed');           
+        }
+    }
 }
 </script>
